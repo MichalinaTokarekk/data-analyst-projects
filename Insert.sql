@@ -1,3 +1,29 @@
+--CREATE TABLE EmployeeDemographics
+--(EmployeeID int,
+--FirstName varchar(50),
+--LastName varchar(50),
+--Age int,
+--Gender varchar(50)
+--)
+
+
+--CREATE TABLE EmployeeSalary
+--(EmployeeID int,
+--JobTitle varchar(50),
+--Salary int)
+
+
+--CREATE TABLE WareHouseEmployeeDemographics (
+--    EmployeeID INT,
+--    FirstName VARCHAR(50),
+--    LastName VARCHAR(50),
+--    Age INT,
+--    Gender VARCHAR(10)
+--);
+
+
+
+
 --INSERT INTO EmployeeDemographics VALUES
 --(1001, 'Jim', 'Halpert', 30, 'Male'),
 --(1002, 'Pam', 'Beasley', 30, 'Female'),
@@ -21,8 +47,8 @@
 --(1008, 'Salesman', 48000),
 --(1009, 'Accountant', 42000)
 
---INSERT INTO EmployeeDemographics VALUES
---(1010, 'Ryan', 'Johnson', 33, 'Male')
+INSERT INTO EmployeeDemographics VALUES
+(NULL, 'Holly', 'Flax', NULL, NULL)
 
 --INSERT INTO EmployeeSalary VALUES
 --(NULL, 'Marketing', 40000)
