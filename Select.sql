@@ -380,3 +380,64 @@ from EmployeeErrors
 
 Select LastName, REPLACE(LastName, '- Fired', '') as LastNameFixed
 FROM EmployeeErrors
+
+
+-- Using Substring
+
+select SUBSTRING(FirstName,1,3)
+from EmployeeErrors
+
+select substring(err.FirstName,1,3), substring(dem.FirstName,1,3)
+from EmployeeErrors err
+join EmployeeDemographics dem
+on substring(err.FirstName,1,3) = substring(dem.FirstName,1,3)
+
+
+-- Using UPPER and lower
+
+select firstname, lower(firstname)
+from EmployeeErrors
+
+select firstname, upper(firstname)
+from EmployeeErrors
+
+
+/*
+
+Today's Topic: Stored Procedures
+
+*/
+
+go
+create procedure test
+as
+select *
+from EmployeeDemographics
+
+
+exec test
+
+go
+create procedure temp_employee
+as
+CREATE TABLE #temp_employees (
+JobTitle varchar(100),
+EmployeesPerJob int,
+AvgAge int,
+AvgSalary int
+)
+
+
+--Procedura z parametrem
+
+GO
+CREATE PROCEDURE GetEmployeesByJob
+    @JobTitle VARCHAR(50)
+AS
+SELECT FirstName, LastName, JobTitle, Salary
+FROM EmployeeDemographics dem
+JOIN EmployeeSalary sal ON dem.EmployeeID = sal.EmployeeID
+WHERE JobTitle = @JobTitle;
+GO
+
+EXEC GetEmployeesByJob @JobTitle = 'Salesman';
